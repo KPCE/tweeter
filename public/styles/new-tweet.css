@@ -1,0 +1,31 @@
+.new-tweet{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.new-tweet button {
+  font-family: Bungee;
+  background-color: #4056a1;
+
+}
+
+.new-tweet button:hover{
+  font-family: Bungee;
+  background-color: olivedrab;
+
+}
+
+.num {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.new-tweet textarea {
+  background-color: #f4f1ec;
+  outline: none;
+  border: none;
+  border-bottom-style: solid;
+  width: 1500px;
+}
