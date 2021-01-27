@@ -68,9 +68,9 @@ return $tweet;
 
 
 // Test / driver code (temporary)
-const $tweet = createTweetElement(data);
-console.log($tweet); // to see what it looks like
-$('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+// const $tweet = createTweetElement(data);
+// console.log($tweet); // to see what it looks like
+// $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
 //renderTweets(data);
 
 
