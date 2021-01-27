@@ -1,6 +1,7 @@
 .new-tweet{
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 
@@ -27,5 +28,5 @@
   outline: none;
   border: none;
   border-bottom-style: solid;
-  width: 1500px;
+  width: 100%;
 }

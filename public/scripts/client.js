@@ -33,27 +33,42 @@ const renderTweets = function(tweets) {
 // loops through tweets
 // calls createTweetElement for each tweet
 // takes return value and appends it to the tweets container
+  for (const tweet of tweets) {
+    $(".container").append(createTweetElement(tweet));
+  }
 }
 
 const createTweetElement = function(tweet) {
   const date = Date(tweet.created_at);
-  const $tweet = $(`
-    <article class="feed">
-      <h4 class="tweet-header">
-        Tweet Poster, image, and @</h4>
-      <span class="tweet-body">${tweet}</div>
-      <footer class="tweet-footer">10 days ago, flag like repeat</footer>
-    </article>
-  `);
+  const $tweet = `
+  <article class="feed">
+  <h4 class="tweet-header">
+    <div id="headtop">
+      <span><img src=${tweet.user.avatars}</span>
+      <span id="at" class="fright">${tweet.user.handle}</span>
+    </div>
+    <span>${tweet.user.name}</span>
+  </h4>
+  <div class="tweet-body">${tweet.content.text}</div>
+  <footer class="tweet-footer">
+    <span>${date} days ago</span>
+    <div id="tweet-buttons" class="fright">
+      <span>flag</span>
+      <span>like</span>
+      <span>retweet</span>
+    </div>
+  </footer>
+</article>
+  `;
 
 return $tweet;
-}
+};
 
 
 
 
 // Test / driver code (temporary)
-const $tweet = createTweetElement(tweetData);
+const $tweet = createTweetElement(data);
 console.log($tweet); // to see what it looks like
 $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
 //renderTweets(data);

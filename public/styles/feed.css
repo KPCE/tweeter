@@ -3,6 +3,7 @@
   flex-direction: column;
   border-style: solid;
   border-color: black;
+  padding-bottom: 6px;
 }
 
 /* border shading, @ pops, all non-border lines thicker + char */
@@ -22,4 +23,18 @@
 
 .feed.tweet-footer{
   border-top: black;
+  margin: 8px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.fright {
+  float: right;
+}
+
+#headtop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
