@@ -27,8 +27,9 @@ const data = [
     },
     "created_at": 1461113959088
   }
-]
+];
 
+//function for rendering tweets to the page
 const renderTweets = function(tweets) {
 // loops through tweets
 // calls createTweetElement for each tweet
@@ -38,6 +39,7 @@ const renderTweets = function(tweets) {
   }
 }
 
+//function for creating the tweet element
 const createTweetElement = function(tweet) {
   const date = Date(tweet.created_at);
   const $tweet = `
@@ -60,9 +62,40 @@ const createTweetElement = function(tweet) {
   </footer>
 </article>
   `;
-
 return $tweet;
 };
+
+//function for submitting new tweet to the feed, if allowed
+$(document).ready(function () {
+
+
+  $("form").on("submit", function(event) {
+    event.preventDefault();
+    const text = $(this.children[0]).val();
+    const $string = $(this).serialize();
+    // if (text.length > 140) {
+    //   renderError("Exceeded maximum character count!");
+    // } else if (!text) {
+    //   renderError("Please enter text before you can tweet.")
+    // } else {
+      $.ajax({
+        url: "/tweets",
+        method: "POST",
+        data: $string
+      // })
+    }
+  )});
+  });
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -72,10 +105,6 @@ return $tweet;
 // console.log($tweet); // to see what it looks like
 // $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
 //renderTweets(data);
-
-
-
-
 
 
  //below was an attempt at making the nav stay at the top
