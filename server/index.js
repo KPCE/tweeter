@@ -35,3 +35,8 @@ app.use("/tweets", tweetsRoutes);
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
 });
+
+//double click event handler example
+// document.addEventListener("dblclick", (event) => {
+//   console.log(event);
+// });

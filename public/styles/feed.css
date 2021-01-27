@@ -1,0 +1,25 @@
+.feed{
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  border-color: black;
+}
+
+/* border shading, @ pops, all non-border lines thicker + char */
+.feed:hover{
+  box-shadow: 0 0 11px rgba(33,33,33,.2);
+}
+
+.feed.tweet-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.feed.tweet-body{
+  border-bottom: black;
+  border-bottom-style: solid;
+}
+
+.feed.tweet-footer{
+  border-top: black;
+}

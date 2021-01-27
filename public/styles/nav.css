@@ -4,8 +4,19 @@ nav {
   background-color: #4056a1;
   color: #ffffff;
   padding: 1.5em;
+  position:sticky;top:0;
 }
 
 span {
   font-family: Bungee;
 }
+
+/* .sticky {
+  position: fixed;
+  top: 0;
+  width:100%;
+}
+
+.sticky + .main {
+  padding-top: 60px;
+} */
