@@ -32,7 +32,9 @@ const data = [
 
 //function for creating the tweet element
 const createTweetElement = function(tweet) {
-  const date = Date(tweet.created_at);
+  // const date = Date(tweet.created_at);
+  // $("abbr.timeago").timeago();
+  const date = $.timeago(new Date(tweet.created_at));
   // console.log(date)
   // console.log(new Date)
   // console.log(date[8] + date[9])
@@ -49,7 +51,7 @@ const createTweetElement = function(tweet) {
   </h4>
   <div class="tweet-body">${escape(tweet.content.text)}</div>
   <footer class="tweet-footer">
-  <span>${date} days ago</span>
+  <span>${date}</span>
   <div id="tweet-buttons" class="fright">
   <span>flag</span>
   <span>like</span>
