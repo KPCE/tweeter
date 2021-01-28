@@ -35,7 +35,10 @@ body {
   margin: auto;
 }
 
-
+#tweet-buttons img {
+ width: 36px;
+ color: red;
+}
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions

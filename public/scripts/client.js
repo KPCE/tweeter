@@ -53,14 +53,14 @@ const createTweetElement = function(tweet) {
   <footer class="tweet-footer">
   <span>${date}</span>
   <div id="tweet-buttons" class="fright">
-  <span>flag</span>
-  <span>like</span>
-      <span>retweet</span>
-      </div>
-      </footer>
-      </article>
-      `;
-      return $tweet;
+  <img src="/images/notification.png">
+  <img src="/images/retweetIcon.png">
+  <img src="/images/heart.png">
+  </div>
+  </footer>
+  </article>
+  `;
+  return $tweet;
 };
 
 //function for escaping user input strings to prevent xss attacks
