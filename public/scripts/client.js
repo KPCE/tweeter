@@ -70,14 +70,15 @@ const escape =  function(str) {
 $(document).ready(function () {
   $("form").on("submit", function(event) {
     event.preventDefault();
+    hideError();
     const text = $(this.children[0]).val();
     const $string = $(this).serialize();
     if (text.length > 140) {
-      return alert("Exceeded maximum character count!");
-      //renderError("Exceeded maximum character count!");
+      // return alert("Exceeded maximum character count!");
+      renderError("Exceeded maximum character count!");
   } else if (!text) {
-      return alert("Please enter text before you can tweet.");
-      //renderError("Please enter text before you can tweet.")
+      // return alert("Please enter text before you can tweet.");
+      renderError("Please enter text before you can tweet.")
   } else {
     $.ajax({
       url: "/tweets",
@@ -91,23 +92,33 @@ $(document).ready(function () {
     }
   })
 
-// renders the most recent tweet 
-const renderRecentTweet = function(tweet) {
-  $(".container").prepend(createTweetElement(tweet));
-} 
+  const hideError = function() {
+    $(".error").hide();
+  }
+  hideError();
 
 
-// loads the most recent tweet 
-const loadRecentTweet = function() {
-  $.ajax({
-    url: '/tweets',
-    method: 'GET'
-  })
-  .done((data) => {
-    renderRecentTweet(data[data.length -1]);
-  })
-  .fail(error => console.log(error));
-}
+  const renderError = function (msg) {
+    $(".error").slideDown().text(msg)
+  }
+
+  // renders the most recent tweet 
+  const renderRecentTweet = function(tweet) {
+    $(".container").prepend(createTweetElement(tweet));
+  } 
+
+
+  // loads the most recent tweet 
+  const loadRecentTweet = function() {
+    $.ajax({
+      url: '/tweets',
+      method: 'GET'
+    })
+    .done((data) => {
+      renderRecentTweet(data[data.length -1]);
+    })
+    .fail(error => console.log(error));
+  }
 
 
     const loadTweets = function() {
