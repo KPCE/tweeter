@@ -84,6 +84,7 @@ $(document).ready(function () {
       // return alert("Please enter text before you can tweet.");
       renderError("Please enter text before you can tweet.")
   } else {
+    
     $.ajax({
       url: "/tweets",
       method: "POST",
@@ -91,6 +92,7 @@ $(document).ready(function () {
       })
       .done(() => {
         loadRecentTweet();
+        $("#tweet-text").val('');
       })
       .fail(error => console.log(error));  
     }
