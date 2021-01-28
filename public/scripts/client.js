@@ -29,15 +29,6 @@ const data = [
   }
 ];
 
-//function for rendering tweets to the page
-const renderTweets = function(tweets) {
-// loops through tweets
-// calls createTweetElement for each tweet
-// takes return value and appends it to the tweets container
-  for (const tweet of tweets) {
-    $(".container").append(createTweetElement(tweet));
-  }
-}
 
 //function for creating the tweet element
 const createTweetElement = function(tweet) {
@@ -45,55 +36,73 @@ const createTweetElement = function(tweet) {
   const $tweet = `
   <article class="feed">
   <h4 class="tweet-header">
-    <div id="headtop">
-      <span><img src=${tweet.user.avatars}</span>
-      <span id="at" class="fright">${tweet.user.handle}</span>
-    </div>
-    <span>${tweet.user.name}</span>
+  <div id="headtop">
+  <span><img src=${tweet.user.avatars}</span>
+  <span id="at" class="fright">${tweet.user.handle}</span>
+  </div>
+  <span>${tweet.user.name}</span>
   </h4>
   <div class="tweet-body">${tweet.content.text}</div>
   <footer class="tweet-footer">
-    <span>${date} days ago</span>
-    <div id="tweet-buttons" class="fright">
-      <span>flag</span>
-      <span>like</span>
+  <span>${date} days ago</span>
+  <div id="tweet-buttons" class="fright">
+  <span>flag</span>
+  <span>like</span>
       <span>retweet</span>
-    </div>
-  </footer>
-</article>
-  `;
-return $tweet;
-};
+      </div>
+      </footer>
+      </article>
+      `;
+      return $tweet;
+    };
 
 //function for submitting new tweet to the feed, if allowed
 $(document).ready(function () {
-
-
   $("form").on("submit", function(event) {
     event.preventDefault();
     const text = $(this.children[0]).val();
     const $string = $(this).serialize();
     // if (text.length > 140) {
     //   renderError("Exceeded maximum character count!");
-    // } else if (!text) {
+  // } else if (!text) {
     //   renderError("Please enter text before you can tweet.")
-    // } else {
-      $.ajax({
-        url: "/tweets",
-        method: "POST",
-        data: $string
+  // } else {
+    $.ajax({
+      url: "/tweets",
+      method: "POST",
+      data: $string
       // })
-    }
-  )});
+    })
   });
 
 
+    console.log("i loaded");
+    const loadTweets = function() {
+      $.ajax('/tweets', { method: 'GET' })
+      .then(function(tweets) {
+      renderTweets(tweets)
+    });
+  }
+    loadTweets();
+
+  
+});
+
+//function for rendering tweets to the page
+const renderTweets = function(tweets) {
+// loops through tweets
+// calls createTweetElement for each tweet
+// takes return value and appends it to the tweets container
+  for (const tweet of tweets) {
+    $(".container").prepend(createTweetElement(tweet));
+  }
+}
 
 
-
-
-
-
+// $(document).ready(function () {
+  
+ 
+// });
 
 
 
