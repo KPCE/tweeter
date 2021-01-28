@@ -40,10 +40,12 @@ const createTweetElement = function(tweet) {
   <article class="feed">
   <h4 class="tweet-header">
   <div id="headtop">
-  <span><img src=${tweet.user.avatars}</span>
-  <span id="at" class="fright">${tweet.user.handle}</span>
+  <span>
+    <img src=${tweet.user.avatars}>
+    <span>${tweet.user.name}</span>
+    <span id="at" class="fright">${tweet.user.handle}</span>
+  </span>
   </div>
-  <span>${tweet.user.name}</span>
   </h4>
   <div class="tweet-body">${escape(tweet.content.text)}</div>
   <footer class="tweet-footer">
@@ -104,7 +106,7 @@ $(document).ready(function () {
 
   // renders the most recent tweet 
   const renderRecentTweet = function(tweet) {
-    $(".container").prepend(createTweetElement(tweet));
+    $("main").prepend(createTweetElement(tweet));
   } 
 
 
@@ -138,7 +140,7 @@ const renderTweets = function(tweets) {
 // calls createTweetElement for each tweet
 // takes return value and appends it to the tweets container
   for (const tweet of tweets) {
-    $(".container").prepend(createTweetElement(tweet));
+    $("main").prepend(createTweetElement(tweet));
   }
 }
 

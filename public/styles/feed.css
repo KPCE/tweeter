@@ -3,7 +3,10 @@
   flex-direction: column;
   border-style: solid;
   border-color: black;
+  background-color: whitesmoke;
+  margin-bottom: 2.2em; /* seperates each post */
   padding-bottom: 6px;
+  padding-inline: 1cm;
 }
 
 /* border shading, @ pops, all non-border lines thicker + char */
@@ -34,7 +37,7 @@
 }
 
 #headtop {
-  display: flex;
+  /*display: flex;*/
   flex-direction: row;
   justify-content: space-between;
 }

@@ -17,6 +17,12 @@ $(document).ready(function() {
     $('.counter').val(count - string.length)
   });
   //add in colour changing
+  if (count < 0) {
+    $(`.counter`).css('color', 'red')
+  }
+  if (count >= 0) {
+    $(`.counter`).css('color', 'rgb(182, 176, 167)')
+  }
 });
 
 
