@@ -33,6 +33,9 @@ const data = [
 //function for creating the tweet element
 const createTweetElement = function(tweet) {
   const date = Date(tweet.created_at);
+  // console.log(date)
+  // console.log(new Date)
+  // console.log(date[8] + date[9])
   const $tweet = `
   <article class="feed">
   <h4 class="tweet-header">
@@ -42,7 +45,7 @@ const createTweetElement = function(tweet) {
   </div>
   <span>${tweet.user.name}</span>
   </h4>
-  <div class="tweet-body">${tweet.content.text}</div>
+  <div class="tweet-body">${escape(tweet.content.text)}</div>
   <footer class="tweet-footer">
   <span>${date} days ago</span>
   <div id="tweet-buttons" class="fright">
@@ -54,7 +57,14 @@ const createTweetElement = function(tweet) {
       </article>
       `;
       return $tweet;
-    };
+};
+
+//function for escaping user input strings to prevent xss attacks
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
 
 //function for submitting new tweet to the feed, if allowed
 $(document).ready(function () {
@@ -62,21 +72,44 @@ $(document).ready(function () {
     event.preventDefault();
     const text = $(this.children[0]).val();
     const $string = $(this).serialize();
-    // if (text.length > 140) {
-    //   renderError("Exceeded maximum character count!");
-  // } else if (!text) {
-    //   renderError("Please enter text before you can tweet.")
-  // } else {
+    if (text.length > 140) {
+      return alert("Exceeded maximum character count!");
+      //renderError("Exceeded maximum character count!");
+  } else if (!text) {
+      return alert("Please enter text before you can tweet.");
+      //renderError("Please enter text before you can tweet.")
+  } else {
     $.ajax({
       url: "/tweets",
       method: "POST",
       data: $string
-      // })
-    })
-  });
+      })
+      .done(() => {
+        loadRecentTweet();
+      })
+      .fail(error => console.log(error));  
+    }
+  })
+
+// renders the most recent tweet 
+const renderRecentTweet = function(tweet) {
+  $(".container").prepend(createTweetElement(tweet));
+} 
 
 
-    console.log("i loaded");
+// loads the most recent tweet 
+const loadRecentTweet = function() {
+  $.ajax({
+    url: '/tweets',
+    method: 'GET'
+  })
+  .done((data) => {
+    renderRecentTweet(data[data.length -1]);
+  })
+  .fail(error => console.log(error));
+}
+
+
     const loadTweets = function() {
       $.ajax('/tweets', { method: 'GET' })
       .then(function(tweets) {
