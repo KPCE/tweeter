@@ -40,19 +40,18 @@
   </header>
 
     <!-- Page-specific (main) content here -->
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form method="POST" action="/tweets/" content-type="application/x-www-form-urlencoded">
+        <!-- <label for="tweet-text">What are you humming about?</label> -->
+        <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+        <div class="num">
+          <button type="submit" >Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
     <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets/" content-type="application/x-www-form-urlencoded">
-          <!-- <label for="tweet-text">What are you humming about?</label> -->
-          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-          <div class="num">
-            <button type="submit" >Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
-
       <article class="feed">
         <h4 class="tweet-header">
           <div id="headtop">
