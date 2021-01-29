@@ -4,6 +4,10 @@ Tweeter is a simple, single-page AJAX-based Twitter clone written in jQuery, HTM
 
 ## Final Product
 
+!["Screenshot of desktop view of Tweeter"](https://github.com/KPCE/tweeter/blob/master/docs/desktopView.png?raw=true)
+!["Screenshot of tablet view of Tweeter, showing sample error"](https://github.com/KPCE/tweeter/blob/master/docs/tabletView.png?raw=true)
+!["Screenshot of desktop view of Tweeter"](https://github.com/KPCE/tweeter/blob/master/docs/mobileView.png?raw=true)
+
 ## Getting Started
 
 - Install all dependencies (using the npm install command).
