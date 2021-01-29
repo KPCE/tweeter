@@ -88,6 +88,7 @@ $(document).ready(function () {
       .done(() => {
         loadRecentTweet();
         $("#tweet-text").val('');
+        $(".counter").val(140);
       })
       .fail(error => console.log(error));  
     }
