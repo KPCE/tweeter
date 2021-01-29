@@ -9,19 +9,32 @@
   padding-inline: 1cm;
 }
 
+.feed #at , .feed #tweet-buttons{
+  opacity: 0.1;
+}
+
 /* border shading, @ pops, all non-border lines thicker + char */
 .feed:hover{
-  box-shadow: 0 0 11px rgba(33,33,33,.2);
+  box-shadow: 10px 10px grey;
+  transition: opacity .3s ease-in-out;
 }
+
+.feed:hover #at , .feed:hover #tweet-buttons{
+  opacity: 1.0;
+  transition: opacity .3s ease-in-out;
+}
+
 
 .feed.tweet-header{
   display: flex;
   justify-content: space-between;
+
 }
 
 .feed.tweet-body{
   border-bottom: black;
   border-bottom-style: solid;
+
 }
 
 .feed.tweet-footer{
@@ -30,6 +43,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
 }
 
 .fright {

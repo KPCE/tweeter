@@ -80,7 +80,7 @@ $(document).ready(function () {
     if (text.length > 140) {
       // return alert("Exceeded maximum character count!");
       renderError("Exceeded maximum character count!");
-  } else if (!text) {
+  } else if (!text || !text.trim()) {
       // return alert("Please enter text before you can tweet.");
       renderError("Please enter text before you can tweet.")
   } else {
