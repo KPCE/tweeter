@@ -1,5 +1,4 @@
 nav {
-  /*height: 120px;*/
   width: 100%;
   background-color: #4056a1;
   color: #ffffff;
@@ -13,8 +12,8 @@ nav {
 }
 
 .logo {
- font-weight: bold;
- font-size: 42px;
+font-weight: bold;
+font-size: 42px;
 }
 
 nav img {
@@ -34,20 +33,12 @@ nav img {
   50% { transform: scale(1) translateY(0); }
   100% { transform: translateY(0); }
 }
+
 .spring {
   animation: spring 2s;
   animation-timing-function: ease;
   animation-iteration-count: infinite;
 }
-/* .sticky {
-  position: fixed;
-  top: 0;
-  width:100%;
-}
-
-.sticky + .main {
-  padding-top: 60px;
-} */
 
 @media only screen and (min-width: 768px) {
   nav {

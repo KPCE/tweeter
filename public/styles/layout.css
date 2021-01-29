@@ -13,10 +13,6 @@ html {
 /*
  * Global layout stuff
  */
-/* nav {
-  font-family:Bungee, sans-serif;
-} */
-
 
 body {
   color: #545149;
@@ -28,15 +24,14 @@ body {
 .container {
   width: 95%;
   max-width: 1200px;
-  /*display: flex;*/
   flex-direction: column;
   align-items: center;
-  background-color:white;/* tweet background*/
+  background-color:white;
   margin: auto;
 }
 
 #tweet-buttons img {
- width: 36px;
+  width: 36px;
 }
 
 #allContent {
@@ -44,60 +39,22 @@ body {
   flex-direction: column;
 }
 
-
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
-
-
-/* .container {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
-} */
-
-
 /* tablet break point */
 @media only screen and (min-width: 768px) {
 
   .container {
     width: 80%;
-
   }
 
   .flex-grid {
     display: block;
   }
-
-  .new-tweet {
-    margin: 1em;
-  }
-
-  header {
-    background-color: #4056a1;
-    background-image: none;
-  }
-  
-
-  /* body {
-    display:-ms-inline-flexbox;
-
-  } */
-
 }
 
 /* desktop break point */
 @media only screen and (min-width: 1024px) {
   #allContent {
     flex-direction: row;
+
   }
 }
-
-/* @media (min-width: 800px) {
-  .container {
-    width: 80%;
-
-  } */

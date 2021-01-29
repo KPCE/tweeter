@@ -4,7 +4,7 @@
   border-style: solid;
   border-color: black;
   background-color: whitesmoke;
-  margin-bottom: 2.2em; /* seperates each post */
+  margin-bottom: 2.2em;
   padding: 0.5em 1.2em;
 }
 
@@ -12,7 +12,6 @@
   opacity: 0.1;
 }
 
-/* border shading, @ pops, all non-border lines thicker + char */
 .feed:hover{
   box-shadow: 10px 10px grey;
   transition: opacity .3s ease-in-out;
@@ -23,17 +22,14 @@
   transition: opacity .3s ease-in-out;
 }
 
-
 .feed.tweet-header{
   display: flex;
   justify-content: space-between;
-
 }
 
 .tweet-body{
   margin-bottom: 16px;
   word-break: break-all;
-
 }
 
 .tweet-footer{
@@ -44,13 +40,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: 18px;
-
 }
-
-/*
-.fright {
-  float: right;
-}*/
 
 .tweet-header {
   display: flex;

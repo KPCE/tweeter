@@ -5,17 +5,14 @@
   margin:3em auto;
 }
 
-
 .new-tweet button {
   font-family: Bungee;
   background-color: #4056a1;
-
 }
 
 .new-tweet button:hover{
   font-family: Bungee;
   background-color: olivedrab;
-
 }
 
 .num {
