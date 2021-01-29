@@ -40,15 +40,11 @@ const createTweetElement = function(tweet) {
   // console.log(date[8] + date[9])
   const $tweet = `
   <article class="feed">
-  <h4 class="tweet-header">
-  <div id="headtop">
-  <span>
+  <div class="tweet-header">
     <img src=${tweet.user.avatars}>
     <span>${tweet.user.name}</span>
     <span id="at" class="fright">${tweet.user.handle}</span>
-  </span>
   </div>
-  </h4>
   <div class="tweet-body">${escape(tweet.content.text)}</div>
   <footer class="tweet-footer">
   <span>${date}</span>
@@ -75,13 +71,12 @@ $(document).ready(function () {
   $("form").on("submit", function(event) {
     event.preventDefault();
     hideError();
-    const text = $(this.children[0]).val();
+    const text = $(this.children[1]).val().trim();
     const $string = $(this).serialize();
     if (text.length > 140) {
-      // return alert("Exceeded maximum character count!");
       renderError("Exceeded maximum character count!");
-  } else if (!text || !text.trim()) {
-      // return alert("Please enter text before you can tweet.");
+  } else if (text === "" || text === null) {
+    
       renderError("Please enter text before you can tweet.")
   } else {
     
@@ -110,7 +105,7 @@ $(document).ready(function () {
 
   // renders the most recent tweet 
   const renderRecentTweet = function(tweet) {
-    $("main").prepend(createTweetElement(tweet));
+    $("#main-feed").prepend(createTweetElement(tweet));
   } 
 
 
@@ -121,7 +116,7 @@ $(document).ready(function () {
       method: 'GET'
     })
     .done((data) => {
-      renderRecentTweet(data[data.length -1]);
+      renderRecentTweet(data[data.length - 1]);
     })
     .fail(error => console.log(error));
   }
@@ -144,7 +139,7 @@ const renderTweets = function(tweets) {
 // calls createTweetElement for each tweet
 // takes return value and appends it to the tweets container
   for (const tweet of tweets) {
-    $("main").prepend(createTweetElement(tweet));
+    $("#main-feed").prepend(createTweetElement(tweet));
   }
 }
 

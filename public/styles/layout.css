@@ -39,6 +39,13 @@ body {
  width: 36px;
 }
 
+#allContent {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
@@ -53,7 +60,7 @@ body {
 } */
 
 
-/* desktop/tablet break point */
+/* tablet break point */
 @media only screen and (min-width: 768px) {
 
   .container {
@@ -69,6 +76,10 @@ body {
     margin: 1em;
   }
 
+  header {
+    background-color: #4056a1;
+    background-image: none;
+  }
   
 
   /* body {
@@ -76,6 +87,13 @@ body {
 
   } */
 
+}
+
+/* desktop break point */
+@media only screen and (min-width: 1024px) {
+  #allContent {
+    flex-direction: row;
+  }
 }
 
 /* @media (min-width: 800px) {

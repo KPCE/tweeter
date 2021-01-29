@@ -31,30 +31,34 @@
     <nav>
       <span class="logo">tweeter</span>
     </nav>
-    <header>
-      <div>
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div class="yrname">
-          <h2>Gottlob Frege</h2>
-      </div>
-  </header>
+    <div id="allContent">
+      <header>
+        <div>
+            <img src="/images/profile-hex.png"> 
+        </div>
+        <br>
+        <div class="yrname">
+            <h2>Gottlob Frege</h2>
+        </div>
+    </header>
 
-    <!-- Page-specific (main) content here -->
-    <section class="container">
-      <div class="new-tweet">
-        <div class="error"></div>
-        <form method="POST" action="/tweets/" content-type="application/x-www-form-urlencoded">
-          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-          <div class="num">
-            <button type="submit" >Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </div>
-    </section>
-    <main class="container">
-    </main>
+      <!-- Page-specific (main) content here -->
+
+      <main class="container">
+        <div class="new-tweet">
+          <div class="error"></div>
+          <form method="POST" action="/tweets/" content-type="application/x-www-form-urlencoded">
+            <h4>What are you humming about?</h4>
+            <textarea name="text" id="tweet-text"></textarea>
+            <div class="num">
+              <button type="submit" >Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </div>
+        <article class="container" id="main-feed">
+        </article>
+      </main>
+    </div>
   </body>
 </html>

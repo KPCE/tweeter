@@ -5,12 +5,14 @@ nav {
   color: #ffffff;
   padding: 1.5em;
   position:sticky;top:0;
+  background-color: #25008a;
+  background-image: url("https://www.transparenttextures.com/patterns/argyle.png");
 }
 
-span {
-  font-family: Bungee;
+.logo {
+ font-weight: bold;
+ font-size: 42px;
 }
-
 /* .sticky {
   position: fixed;
   top: 0;
@@ -20,3 +22,10 @@ span {
 .sticky + .main {
   padding-top: 60px;
 } */
+
+@media only screen and (min-width: 768px) {
+  nav {
+    background-color: #4056a1;
+    background-image: none;
+  }
+}
