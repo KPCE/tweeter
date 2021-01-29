@@ -1,13 +1,14 @@
 .new-tweet{
   display: flex;
   flex-direction: column;
-  width: 100%;
-  margin:3em auto;
+  margin:0 auto;
 }
 
 .new-tweet button {
   font-family: Bungee;
   background-color: #4056a1;
+  margin-bottom: 1em;
+  color: white;;
 }
 
 .new-tweet button:hover{
@@ -27,7 +28,8 @@
   border: none;
   border-bottom-style: solid;
   width: 100%;
-  padding: 1.2em;
+  height: 3em;
+  padding: 1em;
 }
 
 .error {
@@ -48,4 +50,3 @@ output.counter {
 output.counter .red:active {
   color: red;
 }
-

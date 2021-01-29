@@ -56,3 +56,7 @@
 #at {
   margin-left: auto;
 }
+
+#tweet-buttons img {
+  width: 36px;
+}
